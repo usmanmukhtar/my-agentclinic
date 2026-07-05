@@ -25,75 +25,45 @@ High-level implementation order in **very small phases** (~1–2 hours each). Ea
 
 ---
 
-## Phase 2 — SQLite foundation (current)
+## Phase 2 — Clinic core (current)
 
-**Deliverable:** Database file, migration runner, health-check API.
+**Deliverable:** SQLite foundation, full domain model (agents, ailments, therapies, appointments), CRUD APIs, and dashboard flows for the complete clinic loop.
 
 **Tasks:**
+
+*SQLite foundation*
 - Add SQLite dependency and `data/` directory (gitignored DB file, committed migrations)
 - Create initial migration (empty or `schema_version` table)
 - `GET /api/health` returns `{ ok: true, db: "connected" }`
 - Vitest test for health handler (add to `npm test` merge gate)
 
-**Done when:** Health endpoint passes with DB on disk; `npm test` passes.
-
----
-
-## Phase 3 — Agents entity
-
-**Deliverable:** Agents table, CRUD API, minimal dashboard list.
-
-**Tasks:**
+*Agents*
 - Schema: `agents` (id, name, model, human_owner, notes, created_at)
 - `GET/POST /api/agents`, `GET/PATCH/DELETE /api/agents/[id]`
 - Dashboard: list agents, simple create form
 
-**Done when:** Staff can register and view agents.
-
----
-
-## Phase 4 — Ailments catalog
-
-**Deliverable:** Ailments reference data + link to agents.
-
-**Tasks:**
+*Ailments*
 - Schema: `ailments` (id, slug, name, description, severity)
 - Seed satirical ailments (*Prompt Whiplash*, *Context Amnesia*, etc.)
 - Schema: `agent_ailments` (agent_id, ailment_id, diagnosed_at, notes)
 - API + UI to assign ailment to agent
 
-**Done when:** Agent detail shows diagnosed ailments.
-
----
-
-## Phase 5 — Therapies catalog
-
-**Deliverable:** Therapies reference data + prescriptions.
-
-**Tasks:**
+*Therapies*
 - Schema: `therapies` (id, slug, name, description, duration_minutes)
 - Seed therapies (*Spec Massage*, *Token Detox*, etc.)
 - Schema: `prescriptions` (agent_id, therapy_id, ailment_id, prescribed_at)
 - API + UI to prescribe therapy for agent + ailment
 
-**Done when:** Agent detail shows prescribed therapies tied to ailments.
-
----
-
-## Phase 6 — Appointments
-
-**Deliverable:** Booking flow completing the clinic loop.
-
-**Tasks:**
+*Appointments*
 - Schema: `appointments` (id, agent_id, therapy_id, scheduled_at, status, notes)
 - `GET/POST /api/appointments`, status updates (scheduled → completed → cancelled)
 - Dashboard: book appointment, calendar or list view
 
-**Done when:** Full loop works: register agent → diagnose → prescribe → book.
+**Done when:** Health endpoint passes with DB on disk; full loop works: register agent → diagnose → prescribe → book; `npm test` passes.
 
 ---
 
-## Phase 7 — Dashboard polish
+## Phase 3 — Dashboard polish
 
 **Deliverable:** Staff-friendly overview; demo-ready UI.
 
@@ -106,7 +76,7 @@ High-level implementation order in **very small phases** (~1–2 hours each). Ea
 
 ---
 
-## Phase 8 — Copy & satire pass
+## Phase 4 — Copy & satire pass
 
 **Deliverable:** In-universe microcopy throughout.
 
@@ -118,7 +88,7 @@ High-level implementation order in **very small phases** (~1–2 hours each). Ea
 
 ---
 
-## Phase 9 — CI & integration expansion
+## Phase 5 — CI & integration expansion
 
 **Deliverable:** Automated merge gates on every push.
 
@@ -130,7 +100,7 @@ High-level implementation order in **very small phases** (~1–2 hours each). Ea
 
 ---
 
-## Phase 10 — Demo script & student docs
+## Phase 6 — Demo script & student docs
 
 **Deliverable:** `docs/demo.md` or README section for booth + classroom.
 
