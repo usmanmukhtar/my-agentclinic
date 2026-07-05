@@ -4,7 +4,7 @@ High-level implementation order in **very small phases** (~1–2 hours each). Ea
 
 ---
 
-## Phase 0 — Constitution (current)
+## Phase 0 — Constitution ✓
 
 **Deliverable:** `specs/mission.md`, `specs/tech-stack.md`, `specs/roadmap.md` (this file).
 
@@ -12,7 +12,7 @@ High-level implementation order in **very small phases** (~1–2 hours each). Ea
 
 ---
 
-## Phase 1 — Next.js scaffold
+## Phase 1 — Next.js scaffold ✓
 
 **Deliverable:** Next.js App Router project, TypeScript strict, Tailwind, basic layout shell.
 
@@ -25,7 +25,7 @@ High-level implementation order in **very small phases** (~1–2 hours each). Ea
 
 ---
 
-## Phase 2 — SQLite foundation
+## Phase 2 — SQLite foundation (current)
 
 **Deliverable:** Database file, migration runner, health-check API.
 
