@@ -29,6 +29,7 @@ Stakeholder alignment (from mission):
 - **Dashboard shell** (`/dashboard`) — empty route with nav placeholder (no data, no API)
 - **Basic layout** — shared root layout; minimal nav between home and dashboard
 - **Dev workflow** — `npm run dev` serves both routes
+- **Vitest baseline** — `npm test` validates scaffold branding and nav routes (`lib/site.ts` + tests per `specs/tech-stack.md`)
 
 ---
 
@@ -54,7 +55,7 @@ Deferred to later phases per stakeholder decisions:
 |----------|--------|-----------|
 | Scope depth | Minimal scaffold | Ship runnable shell fast; avoid premature UI library setup |
 | Branding tone | Light touch | Name + tagline + placeholder body; save full satire for Phase 8 |
-| Merge validation | Dev server only | `npm run dev` proves home + dashboard; build gate added when APIs ship |
+| Merge validation | Dev server + Vitest | `npm run dev` proves home + dashboard; `npm test` proves scaffold contracts |
 | Package manager | npm (existing `package-lock.json`) | Match repo; tech-stack allows pnpm or npm |
 | Framework | Next.js App Router | Per `specs/tech-stack.md` |
 | Styling | Tailwind CSS | Per tech stack; fast iteration for Steve's marketing bar |
@@ -72,4 +73,4 @@ Deferred to later phases per stakeholder decisions:
 
 ## Success statement
 
-After this phase, a developer runs `npm run dev`, opens the browser, sees AgentClinic branding on `/`, navigates to `/dashboard`, and finds an empty staff shell ready for Phase 2 (SQLite) and Phase 3 (Agents).
+After this phase, a developer runs `npm test` and `npm run dev`, opens the browser, sees AgentClinic branding on `/`, navigates to `/dashboard`, and finds an empty staff shell ready for Phase 2 (SQLite) and Phase 3 (Agents).

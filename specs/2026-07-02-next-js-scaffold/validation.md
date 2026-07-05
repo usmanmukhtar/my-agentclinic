@@ -60,6 +60,19 @@ From home, reach dashboard; from dashboard, return home (nav links or equivalent
 
 ---
 
+### 5. Automated checks (Vitest)
+
+```bash
+npm test
+```
+
+**Pass when:**
+
+- [ ] Command exits 0
+- [ ] Scaffold tests pass (see `tests/scaffold/`)
+
+---
+
 ## Explicitly not required for Phase 1 merge
 
 | Check | Notes |
@@ -72,12 +85,14 @@ From home, reach dashboard; from dashboard, return home (nav links or equivalent
 | Responsive booth layout | Phase 7 |
 | Full satirical copy | Phase 8 |
 
+Vitest is required for Phase 1 merge (`npm test`); see check **5** above.
+
 ---
 
 ## Manual smoke script (~2 min)
 
 1. `git checkout phase-1-next-js-scaffold`
-2. `npm install && npm run dev`
+2. `npm install && npm test && npm run dev`
 3. Visit `/` — confirm branding
 4. Click nav to `/dashboard` — confirm shell
 5. Click nav back to `/` — confirm return

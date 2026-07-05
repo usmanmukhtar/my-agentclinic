@@ -1,7 +1,9 @@
+import { DASHBOARD_TITLE } from "@/lib/site";
+
 export default function DashboardPage() {
   return (
     <div className="space-y-4">
-      <h1 className="text-3xl font-bold tracking-tight">Clinic floor</h1>
+      <h1 className="text-3xl font-bold tracking-tight">{DASHBOARD_TITLE}</h1>
       <p className="max-w-2xl text-slate-600">
         Staff dashboard for managing agents, ailments, therapies, and
         appointments. Patient records and booking tools will appear here in

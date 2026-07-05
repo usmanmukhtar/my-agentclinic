@@ -37,7 +37,20 @@ SQLite (single file, e.g. data/agentclinic.db)
 | `pnpm` or `npm` | Package management |
 | `tsc` / Next.js build | Type checking and production build |
 | ESLint + Prettier | Consistency (add in early roadmap phase) |
-| Vitest or Jest | Unit/integration tests (add when first API ships) |
+| **Vitest** | Automated validation — unit/integration tests for APIs, DB helpers, and critical UI logic |
+
+### Validation (Vitest)
+
+Phase specs (`specs/*/validation.md`) define merge gates. **Vitest** is the standard runner for automated checks; manual smoke steps stay where UI/browser verification is required.
+
+| Script | Command | When to use |
+|--------|---------|-------------|
+| `npm test` | `vitest run` | Merge gate / CI — single pass, non-interactive |
+| `npm run test:watch` | `vitest` | Local dev — re-run on file change |
+
+Add tests alongside features (e.g. `/api/health` in Phase 2). Each phase validation doc should list which `npm test` cases must pass before merge.
+
+Test files live under `tests/` — grouped by phase or domain (e.g. `tests/scaffold/`, future `tests/api/`). Shared setup in `tests/setup.ts`.
 
 ## Deployment (later)
 

@@ -6,10 +6,13 @@ A satirical wellness clinic for overworked AI agents. Staff register agents, dia
 
 ```bash
 npm install
+npm test
 npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) for the home page, or [http://localhost:3000/dashboard](http://localhost:3000/dashboard) for the staff dashboard shell.
+
+Run `npm run test:watch` during development to re-run Vitest on file changes. Tests live under `tests/` (Phase 1 scaffold suite in `tests/scaffold/`). Phase validation docs in `specs/*/validation.md` list which checks must pass before merge.
 
 ## Input from stakeholders
 

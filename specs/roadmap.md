@@ -21,7 +21,7 @@ High-level implementation order in **very small phases** (~1–2 hours each). Ea
 - Add home page with AgentClinic branding (playful tagline)
 - Add empty `/dashboard` route with nav placeholder
 
-**Done when:** `npm run dev` serves home + dashboard shell.
+**Done when:** `npm run dev` serves home + dashboard shell; `npm test` passes scaffold checks.
 
 ---
 
@@ -33,8 +33,9 @@ High-level implementation order in **very small phases** (~1–2 hours each). Ea
 - Add SQLite dependency and `data/` directory (gitignored DB file, committed migrations)
 - Create initial migration (empty or `schema_version` table)
 - `GET /api/health` returns `{ ok: true, db: "connected" }`
+- Vitest test for health handler (add to `npm test` merge gate)
 
-**Done when:** Health endpoint passes with DB on disk.
+**Done when:** Health endpoint passes with DB on disk; `npm test` passes.
 
 ---
 
@@ -117,15 +118,15 @@ High-level implementation order in **very small phases** (~1–2 hours each). Ea
 
 ---
 
-## Phase 9 — Tests & CI
+## Phase 9 — CI & integration expansion
 
-**Deliverable:** Confidence for coursework and demos.
+**Deliverable:** Automated merge gates on every push.
 
 **Tasks:**
-- API integration tests for agents + appointment happy path
-- GitHub Action: lint + test on push
+- GitHub Action: `npm test` (+ lint when ESLint lands) on push
+- Expand Vitest coverage: API integration tests for agents + appointment happy path
 
-**Done when:** PRs cannot merge with broken clinic loop.
+**Done when:** PRs cannot merge with broken clinic loop or failing `npm test`.
 
 ---
 

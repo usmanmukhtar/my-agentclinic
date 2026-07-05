@@ -43,13 +43,16 @@ Numbered task groups. Complete in order; each group leaves repo in a consistent 
 
 ---
 
-## 4. Dev workflow & README touch-up
+## 4. Dev workflow, Vitest & README touch-up
 
+- [ ] Add Vitest (`vitest.config.ts`, `npm test`, `npm run test:watch`) per `specs/tech-stack.md`
+- [ ] Extract scaffold branding/nav into `lib/site.ts` with passing tests in `tests/scaffold/`
 - [ ] Verify `npm run dev` binds and serves `/` and `/dashboard`
-- [ ] Update `README.md` with dev command and route summary (1–2 lines)
+- [ ] Verify `npm test` exits 0 before merge
+- [ ] Update `README.md` with dev and test commands
 - [ ] Confirm no secrets or env requirements for this phase
 
-**Checkpoint:** Newcomer can clone, `npm install`, `npm run dev`, and browse both routes.
+**Checkpoint:** Newcomer can clone, `npm install`, `npm test`, `npm run dev`, and browse both routes.
 
 ---
 
